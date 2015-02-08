@@ -36,7 +36,7 @@
         <div class="col-md-1"></div>
       </div>
       <!-- background -->
-      <div class="row center-block content-block-back" ng-show="target == 'home'"></div>
+      <div class="row center-block content-block-back" ng-show="true"></div>
       <div class="row center-block content-block-back-active navi" ng-hide="target =='home'"></div>
       <div class="row center-block content-block-back-active-content" ng-hide="target=='home'"></div>
       <!-- /background -->
@@ -70,17 +70,19 @@
               <div class="referenzen nav-button" ng-click="go('referenzen')" ng-class="target=='referenzen'?'referenzen_selected':''"></div>
               <div class="breadcrump-text">REFERENZEN</div>
             </div>
-            <div class="col-md-2 col-centered" ng-click="go('kontakt')" ng-class="target=='kontakt'?'kontakt_selected':''">
+            <div class="col-md-3 col-centered" ng-click="go('kontakt')" ng-class="target=='kontakt'?'kontakt_selected':''">
               <div class="kontakt nav-button">KONTAKT</div>
               <div class="breadcrump-text">&nbsp;</div>
             </div>
+            <div ng-view class="content-animate"></div>
           </div>
           <div class="row" ng-show="target=='home'">
             <div class="col-md-2"></div>
             <div class="col-md-8 line"></div>
             <div class="col-md-2"></div>
           </div>
-          <div ng-view class="content-animate"></div>
+
+          
 
         </div>
       </div><!-- //center-block -->
