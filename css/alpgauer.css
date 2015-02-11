@@ -5,20 +5,37 @@ body{
 h1{	
 	font-size: 15px;
 	font-weight: bold;
+	letter-spacing: 0.1em;
+	margin-top: 0px !important;
 }
 h2{
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
+	margin-top: 0px !important;
 }
 p{
-	margin-top: 20px;
-	font-size: 10px;
+	margin-top: 0px;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+p.small{
+	margin-top: 8px;
+	font-size: 11px;
+	margin-bottom: 8px;
+	margin-top: 0px !important;
+}
+p.white{
+	color:white;
 }
 ul.content{
 	padding: 0px;
 }
 ul.content li{
 	list-style: none;
+}
+a{
+	color:black;
+	text-decoration: underline;
 }
 
 .outer{
@@ -35,7 +52,7 @@ ul.content li{
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	height: 80px;
+	height: 90px;
 	position:absolute;
 }
 
@@ -51,7 +68,6 @@ ul.content li{
 	background-clip: padding-box;
 	background-position: center;
 	z-index: 0;
-
 }
 .content-block-back.ng-hide{
 	z-index: 0;
@@ -62,7 +78,7 @@ ul.content li{
   	transition: all linear 0.5s;
 	opacity: 1;
 	background-image: url(../img/nav_background.png);
-	background-position: center center;
+	background-position: right center;
 	z-index: 2;
 }
 .content-block-back-active.ng-hide{
@@ -78,13 +94,27 @@ ul.content li{
 	background-color: white;
 	z-index: 1;
 	position:absolute;
-	height: 500px;
+	height: 484px;
 	top:195px;
 	margin-left: 10%;
 }
-
 .content-block-back-active-content.ng-hide {
   opacity: 0;
+}
+.content-block-back-active-kontakt{
+	-webkit-transition: all linear 0.5s;
+  	transition: all linear 0.5s;
+	opacity: 1;
+	width: 80%;
+	background-image:url(../img/kontakt_back.png);
+	z-index: 1;
+	position:absolute;
+	height: 399px;
+	top:281px;
+	margin-left: 10%;	
+}
+.content-block-back-active-kontakt.ng-hide{
+	opacity:0;
 }
 
 .content-block-front{
@@ -104,19 +134,16 @@ ul.content li{
 	width:61%;
 	z-index: 5;
 	left:22%;
-	top: 73px;
+	top: 87px;
 }
 
 .content-inner{
 	margin-left: 1%;
 	margin-right: 1%;
-	padding-top: 80px;
+	padding-top: 90px;
 	position: absolute;
-	top:80px;
+	top:60px;
 	width: 88%;
-	//background-color: white;
-	//height: 200px;
-	//z-index: 0;
 }
 .content-animate.ng-leave{
 	z-index:4;
@@ -151,16 +178,28 @@ ul.content li{
 	background-position: 0%, 55%;
 	background-size: 100%; 
 }
+.col-left.alpgauer_leftback{
+	background-image: url(../img/Headline_Alpgauer_BG.png);
+	background-repeat:no-repeat;
+	background-position: 0%, 55%;
+	background-size: 100%; 
+}
+.col-left.referenzen_leftback{
+	background-image: url(../img/Headline_Referenzen_BG.png);
+	background-repeat:no-repeat;
+	background-position: 0%, 55%;
+	background-size: 100%; 
+}
 .col-right{
 	text-align: left;
 	vertical-align: 15px;
-	padding-right:170px;
+	padding-right:80px;
 }
 
 .col-home{
 	text-align: center;
 	margin-top: 15px;
-	margin-left: 10%;
+	margin-left: 3%;
 }
 
 .footer{
@@ -172,12 +211,13 @@ ul.content li{
 }
 /*navigation und buttons*/
 .nav-button{
-	width: 90px;
+	width: 50px;
 	height: 75px;
 	margin-right: auto;
 	margin-left: auto;
 	background-repeat: no-repeat;
 	background-position: center center;
+	cursor: pointer;
 }
 
 a:hover.nav_button{
@@ -190,6 +230,7 @@ a:hover.nav_button{
 	background-image: url(../img/home.png);
 	background-position: 25px;
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 .breadcrump-text{
 	text-align: center;
@@ -199,7 +240,10 @@ a:hover.nav_button{
 	letter-spacing: 0.1em;
 	color:grey;
 	height: 80px;
-	margin-top: 10px;
+	margin-top: 25px;
+}
+.breadcrump_active{
+	color:black;
 }
 .kreation{
 	background-image: url(../img/kreation_grau.png);
@@ -209,9 +253,6 @@ div:hover.kreation{
 }
 div.kreation_selected{
 	background-image: url(../img/kreation_weiss.png);
-	background-repeat: no-repeat;
-	width: 90px;
-	height: 75px;
 }
 .umsetzung{
 	background-image: url(../img/umsetzung_grau.png);
@@ -221,9 +262,6 @@ div:hover.umsetzung{
 }
 div.umsetzung_selected{
 	background-image: url(../img/umsetzung_weiss.png);
-	background-repeat: no-repeat;
-	width: 90px;
-	height: 75px;
 }
 .alpgauer{
 	background-image: url(../img/alpgauer_grau.png);
@@ -233,28 +271,23 @@ div:hover.alpgauer{
 }
 div.alpgauer_selected{
 	background-image: url(../img/alpgauer_weiss.png);
-	background-repeat: no-repeat;
-	width: 90px;
-	height: 75px;
 }
 .referenzen{
 	background-image: url(../img/referenzen_grau.png);
-	//background-repeat: no-repeat;
 }
 div:hover.referenzen{
 	background-image: url(../img/referenzen_weiss_glow.png);
-	//background-repeat: no-repeat;	
 }
 div.referenzen_selected{
 	background-image: url(../img/referenzen_weiss.png);
-	background-repeat: no-repeat;
-	width: 90px;
-	height: 75px;
 }
 
 .kontakt{
 	color:grey;
-	padding-top: 28px;
+	padding-top: 35px;
+}
+.kontakt_active{
+	color:white;
 }
 
 

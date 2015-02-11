@@ -18,10 +18,24 @@ angular.module('alpgauer', ['ngRoute','ngAnimate'])
 		.when('/alpgauer', {
 			templateUrl:'content/alpgauer.html'
 		})
+		.when('/alpgauer_mehr', {
+			templateUrl:'content/alpgauer_mehr.html'
+		})
+		.when('/referenzen', {
+			templateUrl:'content/referenzen.html'
+		})
+		.when('/kontakt', {
+			templateUrl:'content/kontakt.html'
+		})
 })
 
 .controller('HomeCtrl', function($scope, $location){
-	$scope.target = $location.url() == '/'? 'home' : $location.url().substr(1, $location.url().length);
+	$scope.init = function(){
+		console.log('init: '+ $location.url());
+		$scope.target = $location.url() == '/' | $location.url()==''? 'home' : $location.url().substr(1, $location.url().length);
+	}
+
+	
 	//$scope.buttonselect = $scope.target.substr(1, $scope.target.length)+'_selected';
 
 	console.log($scope.target);

@@ -27,7 +27,7 @@
   <link href="css/alpgauer.css" rel="stylesheet">
   </head>
   <body ng-app="alpgauer">
-    <div class="container-fluid outer" ng-controller="HomeCtrl">
+    <div class="container-fluid outer" ng-controller="HomeCtrl" ng-init="init()">
       <div class="row banner" >
         <div class="col-md-1"></div>
           <div class="col-md-10 ">
@@ -38,7 +38,8 @@
       <!-- background -->
       <div class="row center-block content-block-back" ng-show="true"></div>
       <div class="row center-block content-block-back-active navi" ng-hide="target =='home'"></div>
-      <div class="row center-block content-block-back-active-content" ng-hide="target=='home'"></div>
+      <div class="row center-block content-block-back-active-content" ng-hide="target=='home' ||target=='kontakt'"></div>
+      <div class="row center-block content-block-back-active-kontakt" ng-show="target=='kontakt'"></div>
       <!-- /background -->
       <div class="row center-block content-block-front row-centered" style="">
         <div class="container-fluid">
@@ -49,34 +50,33 @@
                 &nbsp;                               
               </div>
               <div class="breadcrump-text">&nbsp;</div>
-            </div>
-     
+            </div>    
            
             <div class="col-md-2 col-centered">
               <div class="kreation nav-button" ng-click="go('kreation')" ng-class="target=='kreation'?'kreation_selected':''"></div>
-              <div class="breadcrump-text">KREATION</div> 
+              <div class="breadcrump-text" ng-class="target=='kreation'? 'breadcrump_active':''">KREATION</div> 
             </div>
            
             <div class="col-md-2 col-centered">
               <div class="umsetzung nav-button" ng-click="go('umsetzung')" ng-class="target=='umsetzung'?'umsetzung_selected':''"></div>
-              <div class="breadcrump-text">UMSETZUNG</div>
+              <div class="breadcrump-text" ng-class="target=='umsetzung'? 'breadcrump_active':''">UMSETZUNG</div>
             </div>
 
             <div class="col-md-2 col-centered">
               <div class="alpgauer nav-button" ng-click="go('alpgauer')" ng-class="target=='alpgauer'?'alpgauer_selected':''"></div>
-              <div class="breadcrump-text">ALPGAUER</div>
+              <div class="breadcrump-text" ng-class="target=='alpgauer'? 'breadcrump_active':''">ALPGAUER</div>
             </div>
             <div class="col-md-2 col-centered">
               <div class="referenzen nav-button" ng-click="go('referenzen')" ng-class="target=='referenzen'?'referenzen_selected':''"></div>
-              <div class="breadcrump-text">REFERENZEN</div>
+              <div class="breadcrump-text" ng-class="target=='referenzen'? 'breadcrump_active':''">REFERENZEN</div>
             </div>
-            <div class="col-md-3 col-centered" ng-click="go('kontakt')" ng-class="target=='kontakt'?'kontakt_selected':''">
-              <div class="kontakt nav-button">KONTAKT</div>
+            <div class="col-md-3 col-centered" ng-click="go('kontakt')">
+              <div class="kontakt nav-button" ng-class="target=='kontakt'? 'kontakt_active':''">KONTAKT</div>
               <div class="breadcrump-text">&nbsp;</div>
             </div>
             <div ng-view class="content-animate"></div>
           </div>
-          <div class="row" ng-show="target=='home'">
+          <div class="row" ng-show="target=='home' || target=='kontakt'">
             <div class="col-md-2"></div>
             <div class="col-md-8 line"></div>
             <div class="col-md-2"></div>
