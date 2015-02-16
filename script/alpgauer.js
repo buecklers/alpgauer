@@ -1,4 +1,4 @@
-angular.module('alpgauer', ['ngRoute','ngAnimate'])
+angular.module('alpgauer', ['ngRoute','ngAnimate', 'mailService'])
 
 .config(function($routeProvider, $locationProvider){
 	$routeProvider
@@ -25,20 +25,16 @@ angular.module('alpgauer', ['ngRoute','ngAnimate'])
 			templateUrl:'content/referenzen.html'
 		})
 		.when('/kontakt', {
-			templateUrl:'content/kontakt.html'
+			templateUrl:'content/kontakt.php',
+			controller: 'FormCtrl'
 		})
 })
 
-.controller('HomeCtrl', function($scope, $location){
+.controller('HomeCtrl',['$scope', '$location', function($scope, $location){
 	$scope.init = function(){
 		console.log('init: '+ $location.url());
 		$scope.target = $location.url() == '/' | $location.url()==''? 'home' : $location.url().substr(1, $location.url().length);
 	}
-
-	
-	//$scope.buttonselect = $scope.target.substr(1, $scope.target.length)+'_selected';
-
-	console.log($scope.target);
 
 	$scope.go = function(target){
 		$scope.target = target=='/'? 'home' : target;
@@ -46,7 +42,37 @@ angular.module('alpgauer', ['ngRoute','ngAnimate'])
 		$scope.buttonselect = target.substr(0, target.length)+'_selected';
 	}
 
-})
+}])
+
+.controller('FormCtrl', ['$scope', 'mail', function ($scope, mail){
+	$scope.sent = false;
+	$scope.formular = {
+		'gender' : '',
+		'vorname' : '',
+		'nachname': '',
+		'email': '',
+		'nachricht': '',
+		'captcha':'',
+		'captchaPlaceholder':'Code hier eingeben'
+	}
+
+	$scope.submit = function(){
+		mail.sendMail($scope.formular).then(function(resp){
+			console.log(resp);
+				if(resp == '1'){
+					$scope.sent = true;
+				}else{
+					$scope.formular.captchaPlaceholder = 'falscher Code';
+					$scope.formular.captcha = '';
+				}
+			},
+			function(resp){
+				console.log('mail not sent')
+			})
+
+	}
+
+}])
 
 .filter('buttonselected', function(){
 	return function(button, target){

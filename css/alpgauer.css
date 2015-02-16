@@ -79,6 +79,7 @@ a{
 	opacity: 1;
 	background-image: url(../img/nav_background.png);
 	background-position: right center;
+	background-repeat:no-repeat;
 	z-index: 2;
 }
 .content-block-back-active.ng-hide{
@@ -193,7 +194,7 @@ a{
 .col-right{
 	text-align: left;
 	vertical-align: 15px;
-	padding-right:80px;
+	//padding-right:80px;
 }
 
 .col-home{
@@ -302,4 +303,22 @@ div.referenzen_selected{
     text-align:left;
     /* inline-block space fix */
     margin-right:-4px;
+}
+
+/* formular */
+label{
+	width:80px;
+}
+label.inline{
+	width: 130px;
+}
+input, select, textarea{
+	border-radius: 5px;
+	background-color: rgb(229, 223, 223);
+	border-color: rgb(103, 97, 97);
+}
+input.white{
+	border-color: rgb(228, 220, 220);
+	margin: 7px 4px 2px 5px;
+	width: 128px;
 }

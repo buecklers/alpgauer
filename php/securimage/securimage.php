@@ -1240,11 +1240,14 @@ class Securimage
             );
         }
 
-        $html .= '<div style="clear: both"></div>';
+        
 
-        $html .= sprintf('<label for="%s">%s</label> ',
-                htmlspecialchars($input_id),
-                htmlspecialchars($input_text));
+        if($show_input){
+            $html .= '<div style="clear: both"></div>';
+            $html .= sprintf('<label for="%s">%s</label> ',
+                    htmlspecialchars($input_id),
+                    htmlspecialchars($input_text));
+        }
 
         if (!empty($error_html)) {
             $html .= $error_html;
@@ -1260,8 +1263,9 @@ class Securimage
             $input_attr .= sprintf('%s="%s" ', $name, htmlspecialchars($val));
         }
 
-        $html .= sprintf('<input %s/>', $input_attr);
-
+        if ($show_input){
+            $html .= sprintf('<input %s/>', $input_attr);
+        }
         return $html;
     }
 
