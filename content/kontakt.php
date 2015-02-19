@@ -42,8 +42,8 @@ $options = array("show_audio_button"=>false,
         <input ng-model="formular.nachname" />
         <br>
         <label>Email</label>
-        <input type="email" required ng-model="formular.email" name="email" placeholder="name@example.com" />
-        <span class="error" ng-show="kontakt.email.$error.email">keine E-mail adresse</span>
+        <input type="email" ng-required="true" ng-model="formular.email" name="email" placeholder="name@example.com" />
+        <span class="error" ng-show="kontakt.email.$error.email">keine E-Mail adresse</span>
         <br>      
         <label class="inline">Ihre Nachricht</label><br>
         <textarea name="nachricht" required ng-model="formular.nachricht" rows="6" cols="36" ></textarea>
