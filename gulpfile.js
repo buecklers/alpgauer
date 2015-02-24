@@ -15,6 +15,7 @@ var paths = {
 	content : 'content/*.*',
 	img : 'img/*.*',
 	php : 'php/**/*',
+	phphtaccess : 'php/.htaccess',
 	css : 'css/*.*',
 	replacehtml : 'index.html',
 	rootfiles : ['.htaccess']
@@ -63,6 +64,9 @@ gulp.task('htmlreplace', ['build'], function(){
 gulp.task('copy', ['htmlreplace'], function(){
 	var php = gulp.src(paths.php)
 	.pipe(gulp.dest('./dist/php'));
+
+	// var phpaccess = gulp.src(paths.phphtaccess)
+	// .pipe(gulp.dest('./dist/php'));
 
 	var content = gulp.src(paths.content)
 	.pipe(gulp.dest('./dist/content'));

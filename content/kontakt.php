@@ -1,5 +1,6 @@
 <?php
 session_start();
+header("Content-Type: text/html; charset=utf-8");
 require_once '../php/securimage/securimage.php';
 $options = array("show_audio_button"=>false,
     "image_attributes"=>array(
@@ -22,7 +23,7 @@ $options = array("show_audio_button"=>false,
           +49 (0) 171 532 79 66<br>
         </p>
         <p class="white">
-        hindsches(at)alpgauer.de
+        <a href="#/impressum" style="color:white; text-decoration:none" ng-click="go('impressum')">Impressum</a>
         </p>
   </div>
   <div class="col-md-6 col-centered col-right" ng-controller="FormCtrl">

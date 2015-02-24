@@ -28,6 +28,9 @@ angular.module('alpgauer', ['ngRoute','ngAnimate', 'mailService'])
 			templateUrl:'content/kontakt.php',
 			controller: 'FormCtrl'
 		})
+		.when('/impressum', {
+			templateUrl:'content/impressum.html'
+		})
 })
 
 .controller('HomeCtrl',['$scope', '$location', function($scope, $location){

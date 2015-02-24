@@ -26,13 +26,13 @@
   -->
   
   <!-- build:libangular -->
-   <script type="text/javascript" src="bower-components/node-modules/angular/angular.min.js"></script>
+   <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
   <!-- endbuild -->
   <!--build:libangularroute -->
-  <script type="text/javascript" src="bower-components/node-modules/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
   <!-- endbuild -->
   <!-- build:libangularanimate -->
-  <script type="text/javascript" src="bower-components/node-modules/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
   <!-- endbuild -->
 
   <!-- build:js -->
@@ -47,7 +47,7 @@
       <div class="row banner" >
         <div class="col-md-1"></div>
           <div class="col-md-10 ">
-            <img src="img/alpgauer_banner.png" class="center-block logo">
+         
           </div>
         <div class="col-md-1"></div>
       </div>
@@ -59,8 +59,43 @@
       <!-- /background -->
       <div class="row center-block content-block-front row-centered" style="">
         <div class="container-fluid">
-          <div class="row navi">
-  
+
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+
+
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="mobile-nav">
+            <ul>
+              <li>
+               <img src="img/home_mobile.png" /><a href="#/" ng-click="go('home')" data-toggle="collapse" data-target="#navbar">HOME</a>
+              </li>
+              <li>
+                <img src="img/kreation_grau_mobile.png"><a href="#/kreation" ng-click="go('kreation')" data-toggle="collapse" data-target="#navbar">KREATION</a>
+              </li>
+              <li>
+                <img src="img/umsetzung_grau_mobile.png"><a href="#/umsetzung" ng-click="go('umsetzung')"  data-toggle="collapse" data-target="#navbar">UMSETZUNG</a>
+              </li>
+              <li>
+                <img src="img/alpgauer_grau_mobile.png"><a href="#/alpgauer" ng-click="go('umsetzung')"  data-toggle="collapse" data-target="#navbar">ALPGAUER</a>
+              </li>
+              <li>
+                <img src="img/referenzen_grau_mobile.png"><a href="#/referenzen" ng-click="go('referenzen')"  data-toggle="collapse" data-target="#navbar">REFERENZEN</a>
+              </li>
+              <li>
+                <a href="#/kontakt" ng-click="go('kontakt')"  data-toggle="collapse" data-target="#navbar">KONTAKT</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+          <div class="row navi buttonrow">  
             <div class="col-md-1 col-centered">
               <div class="home" ng-click="go('/')" ng-hide="target=='home'">
                 &nbsp;                               
@@ -89,16 +124,22 @@
             <div class="col-md-3 col-centered" ng-click="go('kontakt')">
               <div class="kontakt nav-button" ng-class="target=='kontakt'? 'kontakt_active':''">KONTAKT</div>
               <div class="breadcrump-text">&nbsp;</div>
-            </div>
-            <div ng-view class="content-animate"></div>
+            </div>                              
           </div>
+
+
+       
+
+<div ng-view class="content-animate"></div>  
+       
+
           <div class="row" ng-show="target=='home' || target=='kontakt'">
             <div class="col-md-2"></div>
             <div class="col-md-8 line"></div>
             <div class="col-md-2"></div>
           </div>
 
-          
+        
 
         </div>
       </div><!-- //center-block -->
