@@ -53,8 +53,8 @@
       </div>
       <!-- background -->
       <div class="row center-block content-block-back" ng-show="true"></div>
-      <div class="row center-block content-block-back-active navi" ng-hide="target =='home'"></div>
-      <div class="row center-block content-block-back-active-content" ng-hide="target=='home' ||target=='kontakt'"></div>
+      <div class="row center-block content-block-back-active navi" ng-class="target+'_navi-back'" ng-hide="target =='home'"></div>
+      <div class="row center-block content-block-back-active-content" ng-hide="target=='home' || target=='kontakt'"></div>
       <div class="row center-block content-block-back-active-kontakt" ng-show="target=='kontakt'"></div>
       <!-- /background -->
       <div class="row center-block content-block-front row-centered" style="">
@@ -73,19 +73,19 @@
           <div class="mobile-nav">
             <ul>
               <li>
-               <img src="img/home_mobile.png" /><a href="#/" ng-click="go('home')" data-toggle="collapse" data-target="#navbar">HOME</a>
+               <a href="#/" ng-click="go('home')" data-toggle="collapse" data-target="#navbar"><img src="img/home_mobile.png" />HOME</a>
               </li>
               <li>
-                <img src="img/kreation_grau_mobile.png"><a href="#/kreation" ng-click="go('kreation')" data-toggle="collapse" data-target="#navbar">KREATION</a>
+                <a href="#/kreation" ng-click="go('kreation')" data-toggle="collapse" data-target="#navbar"><img src="img/kreation_grau_mobile.png" />KREATION</a>
               </li>
               <li>
-                <img src="img/umsetzung_grau_mobile.png"><a href="#/umsetzung" ng-click="go('umsetzung')"  data-toggle="collapse" data-target="#navbar">UMSETZUNG</a>
+                <a href="#/umsetzung" ng-click="go('umsetzung')"  data-toggle="collapse" data-target="#navbar"><img src="img/umsetzung_grau_mobile.png" />UMSETZUNG</a>
               </li>
               <li>
-                <img src="img/alpgauer_grau_mobile.png"><a href="#/alpgauer" ng-click="go('umsetzung')"  data-toggle="collapse" data-target="#navbar">ALPGAUER</a>
+                <a href="#/alpgauer" ng-click="go('umsetzung')"  data-toggle="collapse" data-target="#navbar"><img src="img/alpgauer_grau_mobile.png" />ALPGAUER</a>
               </li>
               <li>
-                <img src="img/referenzen_grau_mobile.png"><a href="#/referenzen" ng-click="go('referenzen')"  data-toggle="collapse" data-target="#navbar">REFERENZEN</a>
+                <a href="#/referenzen" ng-click="go('referenzen')"  data-toggle="collapse" data-target="#navbar"><img src="img/referenzen_grau_mobile.png" />REFERENZEN</a>
               </li>
               <li>
                 <a href="#/kontakt" ng-click="go('kontakt')"  data-toggle="collapse" data-target="#navbar">KONTAKT</a>

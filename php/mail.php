@@ -13,7 +13,7 @@ if ($image->check($request->captcha) == true) {
 			."Vorname: ".$request->vorname."\n"
 			."Nachname: ".$request->nachname."\n"
 			."E-Mail: ".$request->email."\n";
-	$to = 'thomas@localhost';
+	$to = 'info@alpgauer.de';
 	$from = $request->email;
 	$subject = "Mail from Alpgauer.de";
 	$message = $request->nachricht.$footer;
