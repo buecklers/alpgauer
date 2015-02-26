@@ -47,7 +47,7 @@ $options = array("show_audio_button"=>false,
         <span class="error" ng-show="kontakt.email.$error.email">keine E-Mail adresse</span>
         <br>      
         <label class="inline">Ihre Nachricht</label><br>
-        <textarea name="nachricht" required ng-model="formular.nachricht" rows="6" cols="36" ></textarea>
+        <textarea name="nachricht" required ng-model="formular.nachricht" rows="6" cols="30" ></textarea>
         <br>
         <div>
             <?php echo Securimage::getCaptchaHtml($options) ?>

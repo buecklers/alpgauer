@@ -20,7 +20,7 @@ p{
 }
 p.small{
 	margin-top: 8px;
-	font-size: 11px;
+	font-size: 12px;
 	margin-bottom: 8px;
 	margin-top: 0px !important;
 }
@@ -88,6 +88,11 @@ a{
 	background-clip: padding-box;
 	background-position: center;
 	z-index: 0;
+}
+@media(max-width: 500px){
+	.content-block-back{
+		min-height:100%;
+	}
 }
 .content-block-back.ng-hide{
 	z-index: 0;
@@ -198,7 +203,7 @@ a{
 		margin-right: 10%;
 		//padding-top: 90px;
 		position: absolute;
-		top:30px;
+		top:16px;
 		width: 73%;
 		z-index:-1;
 		opacity:inherit;
@@ -243,7 +248,7 @@ a{
 		height: 200px;
 	}
 }
-.col-left.kreation_leftback{
+.col-left.kreation_leftback, .col-left.leistung_leftback{
 	background-image: url(../img/Headline_Kreation_BG.png);
 	background-repeat:no-repeat;
 	background-position: 0%, 55%;
@@ -255,7 +260,7 @@ a{
 	background-position: 0%, 55%;
 	background-size: 100%; 
 }
-.col-left.alpgauer_leftback{
+.col-left.alpgauer_leftback, .col-left.alpgauer_mehr_leftback{
 	background-image: url(../img/Headline_Alpgauer_BG.png);
 	background-repeat:no-repeat;
 	background-position: 0%, 55%;
@@ -275,7 +280,7 @@ a{
 
 .col-home{
 	text-align: center;
-	margin-top: 15px;
+	//margin-top: 15px;
 	margin-left: 3%;
 }
 
@@ -306,13 +311,13 @@ a{
 		background-position: center center;
 		background-color: dark grey;
 	}
-	.content-block-back-active.navi.kreation_navi-back{
+	.content-block-back-active.navi.kreation_navi-back, .content-block-back-active.navi.leistung_navi-back{
 		background-image: url(../img/Headline_Kreation_BG.png);
 	}
 	.content-block-back-active.navi.umsetzung_navi-back{
 		background-image: url(../img/Headline_Umsetzung_BG.png);
 	}
-	.content-block-back-active.navi.alpgauer_navi-back{
+	.content-block-back-active.navi.alpgauer_navi-back, .content-block-back-active.navi.alpgauer_mehr_navi-back{
 		background-image: url(../img/Headline_Alpgauer_BG.png);
 	}
 	.content-block-back-active.navi.referenzen_navi-back{
