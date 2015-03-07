@@ -31,7 +31,7 @@ ul.content{
 	padding: 0px;
 }
 ul.content li{
-	list-style: none;
+	margin-left:21px;
 }
 a{
 	color:black;
@@ -87,6 +87,7 @@ a{
 	background-image: url(../img/titelbild_hr.jpg);
 	background-clip: padding-box;
 	background-position: center;
+	background-repeat: no-repeat;
 	z-index: 0;
 }
 @media(max-width: 500px){
