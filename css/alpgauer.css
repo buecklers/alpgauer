@@ -81,19 +81,26 @@ a{
 	//width:100%;
 	//height:85%;
 	//top:195px;
-	min-height:74%;
+	min-height:100%;
 	left:0px;
 	min-width:100%;
-	background-image: url(../img/titelbild_hr.jpg);
+	background: url(../img/titelbild_hr.jpg) no-repeat 50% 50% fixed;
 	background-clip: padding-box;
 	background-position: center;
-	background-repeat: no-repeat;
+	//background-repeat: no-repeat;
+	background-size: cover;
 	z-index: 0;
 }
 @media(max-width: 500px){
 	.content-block-back{
 		min-height:100%;
 	}
+}
+@media(min-height: 810px){
+	.content-block-back{
+		background-image: url(../img/titelbild_hoch.jpg);
+	}
+
 }
 .content-block-back.ng-hide{
 	z-index: 0;
@@ -142,12 +149,18 @@ a{
 	width: 80%;
 	background-image:url(../img/kontakt_back.jpg);
 	background-repeat:no-repeat;
-	background-position: left center;
+	background-position: center;
 	z-index: 1;
-	position:absolute;
+	position:relative;
 	height: 376px;
-	top:281px;
+	top:90px;
 	margin-left: 10%;	
+}
+@media(min-width: 1350px){
+	.content-block-back-active-kontakt{
+		background-image: url(../img/kontakt_back_hr_nowords.jpg);
+	}
+
 }
 .content-block-back-active-kontakt.ng-hide{
 	opacity:0;
@@ -198,6 +211,7 @@ a{
 		display:none;
 	}
 }
+
 @media(max-width: 500px){
 	.content-inner{
 		margin-left: 10%;
@@ -421,6 +435,7 @@ a:hover.nav_button{
 	background-position: 25px;
 	background-repeat: no-repeat;
 	cursor: pointer;
+	margin-left: 22px;
 }
 .breadcrump-text{
 	text-align: center;
