@@ -96,9 +96,19 @@ a{
 		min-height:100%;
 	}
 }
-@media(min-height: 810px){
+@media(max-height:800px){
 	.content-block-back{
-		background-image: url(../img/titelbild_hoch.jpg);
+		background: url(../img/titelbild.jpg) no-repeat 50% 50% ;
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+@media(min-height: 1100px){
+	.content-block-back{
+		background: url(../img/titelbild_hoch.jpg) no-repeat 50% 50% fixed;
+		background-position: center 20%;
+		background-size: cover;
 	}
 
 }
