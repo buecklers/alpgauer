@@ -159,16 +159,16 @@ a{
 	width: 80%;
 	background-image:url(../img/kontakt_back.jpg);
 	background-repeat:no-repeat;
-	background-position: center;
+	background-position: left;
 	z-index: 1;
 	position:relative;
 	height: 376px;
 	top:90px;
 	margin-left: 10%;	
 }
-@media(min-width: 1350px){
+@media(min-width: 1400px){
 	.content-block-back-active-kontakt{
-		background-image: url(../img/kontakt_back_hr_nowords.jpg);
+		background-image: url(../img/kontakt_back_hg.jpg);
 	}
 
 }
