@@ -258,10 +258,16 @@ a{
 	margin-right: 107px;
 }
 .content-animate.ng-enter{
-	opacity: 0;
+	-webkit-transition: all linear 0.5s;
+	-moz-transition: 0.5s linear all;
+  	-o-transition: 0.5s linear all;
+  	transition: all linear 0.5s;
+	opacity: 0.8;
+	z-index: 4;
+	margin-right: 107px;
 }
 .content-animate.ng-hide{
-	opacity:0;
+	opacity: 0;
 }
 .col-left{
 	text-align: right !important;
