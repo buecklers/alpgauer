@@ -1,4 +1,4 @@
-angular.module('alpgauer', ['ngRoute','ngAnimate', 'mailService'])
+angular.module('alpgauer', ['ngRoute', 'ngAnimate', 'mailService'])
 
 .config(function($routeProvider, $locationProvider){
 	$routeProvider
