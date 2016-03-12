@@ -36,7 +36,7 @@ angular.module('alpgauer', ['ngRoute', 'ngAnimate', 'mailService'])
 .controller('HomeCtrl',['$scope', '$location', function($scope, $location){
 	$scope.init = function(){
 		console.log('init: '+ $location.url());
-		$scope.target = $location.url() == '/' | $location.url()==''? 'home' : $location.url().substr(1, $location.url().length);
+		$scope.target = $location.url() == '/' || $location.url()==''? 'home' : $location.url().substr(1, $location.url().length);
 	}
 
 	$scope.go = function(target){
@@ -44,6 +44,7 @@ angular.module('alpgauer', ['ngRoute', 'ngAnimate', 'mailService'])
 		$location.url(target);
 		$scope.buttonselect = target.substr(0, target.length)+'_selected';
 	}
+	$scope.status = 'ready';
 
 }])
 
@@ -74,7 +75,7 @@ angular.module('alpgauer', ['ngRoute', 'ngAnimate', 'mailService'])
 			})
 
 	}
-
+	$scope.status = 'ready';
 }])
 
 .filter('buttonselected', function(){
