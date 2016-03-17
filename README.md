@@ -9,5 +9,8 @@ Deploy
 ---++ gulp deploy --nv=prod
 Bumps the version and copies a runable version to the dist folder that can be copied to the productive webserver´s document root
 
+---++ gulp deploy --nv=test
+Creates the productive copie without bumping the version
+
 ---++ gulp --nv=test
 Copies a version into the dist folder that can be tested with localhost/alpgauer/dist
