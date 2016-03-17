@@ -4,13 +4,13 @@ The website runs in html5mode and can be crawled by search engines.
 As it uses a php script to create a captcha, run it with a xamp installation. 
 Start your browser with localhost/alpgauer
 
-Deploy
+## Deploy
 
----++ gulp deploy --nv=prod
+### gulp deploy --nv=prod
 Bumps the version and copies a runable version to the dist folder that can be copied to the productive webserver´s document root
 
----++ gulp deploy --nv=test
+### gulp deploy --nv=test
 Creates the productive copie without bumping the version
 
----++ gulp --nv=test
+### gulp --nv=test
 Copies a version into the dist folder that can be tested with localhost/alpgauer/dist
