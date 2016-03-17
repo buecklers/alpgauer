@@ -8,6 +8,7 @@ var ngmin = require('gulp-ngmin');
 var htmlreplace = require('gulp-html-replace');
 var bump = require('gulp-bump');
 var replace = require('gulp-replace');
+var argv = require('yargs').argv;
 
 var paths = {
 	scripts : 'script/*.js',
@@ -19,6 +20,41 @@ var paths = {
 	css : 'css/*.*',
 	replacehtml : 'index.html',
 	rootfiles : ['.htaccess']
+}
+
+function replaceconf(buildtarget){
+    var config = {
+		'libangular' :{
+			src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js',
+			tpl: '<script type="text/javascript" src="%s"></script>'
+		},
+		'libangularroute' : {
+			src: 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-route.js',
+			tpl: '<script type="text/javascript" src="%s"></script>'
+		},
+		'libangularanimate' : {
+			src: 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.js',
+			tpl: '<script type="text/javascript" src="%s"></script>'
+		},
+		'js' : {
+			src: 'script/' + pkg.name + '.min.js',
+			tpl: '<script type="text/javascript" src="%s"></script>'
+        }
+    };
+    if(buildtarget === 'test'){
+        console.log('im test');
+        config.basepath = {
+            src: '/alpgauer/dist/',
+            tpl: '<base href="%s">'
+        }
+        console.log(config);
+    }else if(buildtarget === 'prod'){
+        config.basepath = {
+            src: '/',
+            tpl: '<base href="%s">'
+        }
+    }
+    return config;
 }
 
 gulp.task('clean', function(){
@@ -37,25 +73,12 @@ gulp.task('build', ['clean'], function(){
 });
 
 gulp.task('htmlreplace', ['build'], function(){
+    var buildtarget = 'test';
+    if(argv.hasOwnProperty('nv')){
+        buildtarget = argv.nv;
+    }
 	return gulp.src(paths.replacehtml)
-	.pipe(htmlreplace({
-		'libangular' :{
-			src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js',
-			tpl: '<script type="text/javascript" src="%s"></script>'
-		},
-		'libangularroute' : {
-			src: 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-route.js',
-			tpl: '<script type="text/javascript" src="%s"></script>'
-		},
-		'libangularanimate' : {
-			src: 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular-animate.js',
-			tpl: '<script type="text/javascript" src="%s"></script>'
-		},
-		'js' : {
-			src: 'script/' + pkg.name + '.min.js',
-			tpl: '<script type="text/javascript" src="%s"></script>'
-		}
-	}, {
+	.pipe(htmlreplace(replaceconf(buildtarget), {
 		resolvePaths:true
 	}))
 	.pipe(gulp.dest('./dist/'))
